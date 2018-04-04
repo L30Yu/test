@@ -5,8 +5,12 @@
     .module('game')
     .controller('GameHomeController', GameHomeController);
 
-  function GameHomeController() {
+    GameHomeController.$inject = ['$scope', 'Authentication'];
+
+  function GameHomeController($scope, Authentication) {
     var vm = this;
+
+    vm.authentication = Authentication;
 
     vm.dummyLeaderboardData = [
         {
