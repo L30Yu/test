@@ -1,0 +1,14 @@
+{
+  "name": "Circle Programming Exercise",
+  "short_name": "Circle",
+  "start_url": ".",
+  "display": "browser",
+  "background_color": "#fff",
+  "theme_color": "#000",
+  "description": "Circle Programming Interview Exercise",
+  "icons": [{
+    "src": "/modules/core/client/img/brand/icon.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }]
+}

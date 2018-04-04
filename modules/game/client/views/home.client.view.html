@@ -1,0 +1,83 @@
+<section>
+  <div class="jumbotron text-center">
+    <div class="row">
+      <div class="img-responsive">
+        <img alt="MEAN.JS" class="img-responsive text-center" src="/modules/game/client/img/brand/logo.png" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <p>
+        <a class="btn btn-success btn-lg" ui-sref="game.local">Play Local Game</a>
+        &nbsp;
+        &nbsp;
+        <a class="btn btn-success btn-lg" ui-sref="game.detail({gameId: 0})">Create Online Game</a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h2><strong>L</strong>eaderboard</h2>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Username</th>
+                <th scope="col">Games Played</th>
+                <th scope="col">Wins</th>
+                <th scope="col">Losses</th>
+                <th scope="col">Draws</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="leader in vm.dummyLeaderboardData">
+                <td><img ng-src="{{leader.picture}}" alt="{{leader.username}}" class="pull-left chat-profile-image" /></td>
+                <td><span ng-bind="leader.username"></span></td>
+                <td><span ng-bind="leader.gamespl"></span></td>
+                <td><span ng-bind="leader.wins"></span></td>
+                <td><span ng-bind="leader.losses"></span></td>
+                <td><span ng-bind="leader.draws"></span></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <h2><strong>O</strong>pen games</h2>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Lobby Name</th>
+                <th scope="col">Created</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="lobby in vm.dummyLobbyData">
+                <td><span ng-bind="lobby.Name"></span></td>
+                <td><span ng-bind="lobby.Created"></span> ago</td>
+                <td><a class="btn btn-success" ui-sref="game.detail({gameId: lobby.lobbyId})">Join</a></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <h2><strong>G</strong>ames in progress</h2>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Lobby Name</th>
+                <th scope="col">Created</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="game in vm.dummySpectateData">
+                <td><span ng-bind="game.Name"></span></td>
+                <td><span ng-bind="game.Created"></span> ago</td>
+                <td><a class="btn btn-success" ui-sref="spectator({gameId: game.gameId})">Spectate</a></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
